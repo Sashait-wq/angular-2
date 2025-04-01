@@ -1,5 +1,11 @@
-import { Component, Input, SimpleChanges } from '@angular/core';
-
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
+import { ProductCards } from 'src/app/interface';
 @Component({
   selector: 'app-cart',
   template: `
@@ -11,23 +17,28 @@ import { Component, Input, SimpleChanges } from '@angular/core';
         </li>
       </ul>
     </div>
+    <button id="remove-btn" (click)="removeCartItems()">Remove</button>
     <ng-template #emptyCart>
       <p>The cart is empty.</p>
     </ng-template>
   `,
   styleUrls: ['./cart.component.css'],
 })
-export class CartComponent {
-  @Input() cartItems = [];
+export class CartComponent implements OnInit, OnChanges {
+  @Input() cartItems: ProductCards[] = [];
 
-  ngOnInit() {
+  public ngOnInit() {
+    this.cartItems;
     console.log('CartComponent initialized');
-    // Логіка для ініціалізації, якщо потрібно.
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes.cartItems) {
+  public ngOnChanges(changes: SimpleChanges) {
+    if (changes['cartItems']) {
       console.log('Cart items updated:', this.cartItems);
     }
+  }
+
+  public removeCartItems() {
+    this.cartItems.pop();
   }
 }

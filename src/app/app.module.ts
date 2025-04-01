@@ -8,7 +8,12 @@ import { CartComponent } from './cart/cart.component';
 import { ParentComponent } from './parent/parent.component';
 
 @NgModule({
-  declarations: [AppComponent, ProductListComponent, CartComponent, ParentComponent],
+  declarations: [
+    AppComponent,
+    ProductListComponent,
+    CartComponent,
+    ParentComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

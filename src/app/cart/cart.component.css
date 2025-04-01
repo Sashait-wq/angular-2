@@ -1,0 +1,13 @@
+#remove-btn {
+  color: #fff;
+  background: linear-gradient(180deg, #e91e63, #c2185b);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+  transition: all 0.25s ease-in-out;
+  margin-top: 8px;
+}
+
+#remove-btn:hover {
+  background: linear-gradient(180deg, #f06292, #d81b60);
+  box-shadow: 2px 2px 10px rgba(255, 80, 150, 0.6);
+  transform: scale(1.02);
+}
